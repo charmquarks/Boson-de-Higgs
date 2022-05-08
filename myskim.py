@@ -91,6 +91,7 @@ def vectorSpecial(vector, condition):
 ## 5. Two positive and two negative muons/electrons
 def skimJson(jsonDataSet, skimDataSet, particle, option):
     df = pd.read_json(jsonDataSet)
+    print(df.keys())
     if option not in range(1,5):
         print("Choose a number between 1 and 5")
     if particle == "4Muons":
@@ -100,4 +101,4 @@ def skimJson(jsonDataSet, skimDataSet, particle, option):
     with open(skimDataSet,"w") as file:
         file.write(js) 
 
-skimJson('test.json', 'skim4leptons', "4Muons", 1)
+skimJson('test.json', 'skim4leptons.json', "4Muons", 1)
