@@ -81,16 +81,23 @@ def vectorSpecial(vector, condition):
 
 
 ## Options for skiming data ##
+## Particle "4Muons"
+## Particle "4Electrons"
+## Options for analysis:
 ## 1. At least four muons/electrons
 ## 2. Require good isolation
 ## 3. Good muon/electrons kinematics
 ## 4. Track close to primary vertex with small uncertainty
 ## 5. Two positive and two negative muons/electrons
-def skimJson(jsonDataSet, skimDataSet, option):
+def skimJson(jsonDataSet, skimDataSet, particle, option):
     df = pd.read_json(jsonDataSet)
     if option not in range(1,5):
         print("Choose a number between 1 and 5")
-    js = check4Muons(df,option).to_json(orient = 'records')
+    if particle == "4Muons":
+        js = check4Muons(df,option).to_json(orient = 'records')
+    elif particle == "4Electrons":
+        js = check4Electrons(df,option).to_json(orient = 'records')
     with open(skimDataSet,"w") as file:
         file.write(js) 
 
+skimJson('test.json', 'skim4leptons', "4Muons", 1)
