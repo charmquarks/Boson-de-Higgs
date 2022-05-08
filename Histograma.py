@@ -40,11 +40,12 @@ class Histograma:
       listnoms.append(cols)
     return listnoms
 
-  def Histo(self):
+  def Histo(self, variable = "Muon_mass"):
+    #Aquí debes de introducir la columna de donde quieres obtener el histograma. Por default se añadió la masa del muón
 
-    sconj = self.ToPandas()["Muon_mass"]
-    hist = sconj.hist()
-    return hist
+    sconj = self.ToPandas()[variable]
+    hist = plt.hist(sconj)
+    return plt.show()
 
 hist = Histograma("Datos.json")
 hist.Histo()
