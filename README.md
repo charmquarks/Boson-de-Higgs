@@ -14,3 +14,7 @@ skimJson('dataFileName, 'filteredFileName', "4Muons", 1)
 
 #### Analiza los datos con pandas
 Creamos métodos usando la librería de python pandas para hacer histogramas de datos en formato json
+
+#### Data sets en formato JSON
+Convertimos algunos de los datasets del CERN al formato json. Hay muchos otros datasets animate a convertirlos tu mismo con el script que subimos a este repo :)
+👉​[Datasets en json](http://https://drive.google.com/drive/folders/1a2u7wCwk-tn0uXSN_nuk9Gwb40Xr2dvi?usp=sharing "Datasets en json")
